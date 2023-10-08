@@ -4,6 +4,11 @@
     font-weight: 400;
     src: local('Packard Antique'), url('./assets/fonts/PackardAntique.woff') format('woff');
 }
+
+*
+{
+    overflow: hidden;
+}
 /* @font-face {-
 
 *,
