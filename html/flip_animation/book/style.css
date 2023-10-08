@@ -4,13 +4,7 @@
     font-weight: 400;
     src: local('Packard Antique'), url('./assets/fonts/PackardAntique.woff') format('woff');
 }
-@font-face {
-    font-family: 'Packard Antique';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Packard Antique'), url('./assets/fonts/PackardAntique-Bold.woff') format('woff');
-}
-
+/* @font-face {-
 
 *,
 *:before,
