@@ -23,6 +23,7 @@ img {
 }
 body {
   font-family: "Stalemate", cursive;
+  margin: 0;
 }
 
 .pages-container {

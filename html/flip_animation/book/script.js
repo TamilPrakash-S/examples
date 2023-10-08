@@ -3034,8 +3034,8 @@
 $(window).ready(function () {
     window.turnObj = $(".pages").turn({
         duration: 1500,
-        width: window.innerWidth - 50,
-        height: window.innerHeight - 20,
+        width: window.innerWidth,
+        height: window.innerHeight,
         page: 2,
         //  acceleration: true,
         display: 'double',
