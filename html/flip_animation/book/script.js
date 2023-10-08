@@ -3044,20 +3044,17 @@ $(window).ready(function () {
         elevation: 300,
         when: {
             turned: function (e, page) {
-                console.log("Current view: ", $(this).turn("view"));
+                // console.log("Current view: ", $(this).turn("view"));
             }
         }
     });
-    console.log(window.turnObj);
 });
 
 function nextPage() {
-    console.log("clicked");
     turnObj.turn("next");
 }
 
 function prevPage()
 {
-    console.log("clickedp");
     turnObj.turn("previous");
 }
