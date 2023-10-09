@@ -3048,13 +3048,37 @@ $(window).ready(function () {
             }
         }
     });
+
+    // testt();
 });
 
 function nextPage() {
     turnObj.turn("next");
 }
 
-function prevPage()
-{
+function prevPage() {
     turnObj.turn("previous");
+}
+
+let title = "WHOM SHALL I FEAR.";
+let index = 0;
+let isIncriment = true;
+let titleEle = document.getElE;
+setInterval(()=>{
+    index += isIncriment ? 1 : -1;
+    if(index >= 0 && index < title.length) document.title = title.substring(0, index);
+    if(index >= title.length + 2) isIncriment = false;
+    if(index <= 1) isIncriment = true; 
+}, 250);
+
+function testt()
+{
+
+    let left = document.getElementsByClassName("left-2")[0];
+    let right = document.getElementsByClassName("right-2")[0];
+    document.body.style.transform = "scale(.75)";
+    left.style.transform = "rotateX(60deg) rotateY(6deg)";
+    right.style.transform = "rotateX(-60deg) rotateY(6deg)";
+    left.style.perspective = "630px";
+    left.style.perspectiveOrigin = "center 50px"
 }

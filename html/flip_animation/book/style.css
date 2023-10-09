@@ -1,9 +1,10 @@
 @font-face {
-    font-family: 'Packard Antique';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Packard Antique'), url('./assets/fonts/PackardAntique.woff') format('woff');
+  font-family: 'Packard Antique';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Packard Antique'), url('./assets/fonts/PackardAntique.woff') format('woff');
 }
+
 /* @font-face {
     font-family: 'Packard Antique';
     font-style: normal;
@@ -21,6 +22,7 @@
 img {
   max-width: 100%;
 }
+
 body {
   margin: 0;
   height: 100vh;
@@ -37,10 +39,9 @@ body {
   height: 91%;
 }
 
-.pages
-{
-    width: 98vw;
-    height: 98vh;
+.pages {
+  width: 98vw;
+  height: 98vh;
 }
 
 .pages [class^="page-num-"] {
@@ -61,17 +62,137 @@ body {
   right: 0;
 }
 
-*
-{
-    user-select: none!important;
+* {
+  user-select: none !important;
 }
 
-img
-{
-    pointer-events: none;
+img {
+  pointer-events: none;
 }
 
-.page-num-2, .page-num-1, body
-{
-    overflow: hidden;
+.page-num-2,
+.page-num-1,
+body {
+  overflow: hidden;
+}
+
+.content-bg {
+  top: 0px;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background-color: #000;
+  pointer-events: none;
+}
+
+.content-bg.left {
+  left: 0;
+}
+
+.content-bg.right {
+  right: 0;
+}
+
+.page-num-1 .arrow.next {
+  left: 25vw;
+  bottom: 5vw;
+  position: absolute;
+  width: 5vw;
+  z-index: 1000000;
+  mix-blend-mode: difference;
+  transition: mix-blend-mode 5s;
+  animation: fadeRight forwards 3s infinite;
+  animation-timing-function: linear;
+}
+
+.arrow.next:hover {
+  opacity: 1 !important;
+  animation: unset;
+}
+
+.ct-img {
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.right .ct-img {
+  left: unset;
+  right: 0;
+}
+
+.bl-unset,
+.content-bg:nth-child(1) {
+  mix-blend-mode: unset;
+}
+
+.bl-mul,
+.content-bg:nth-child(2) {
+  mix-blend-mode: multiply;
+}
+
+.bl-cd,
+.content-bg:nth-child(3) {
+  mix-blend-mode: color-dodge;
+}
+
+.text {
+  font-family: Packard Antique;
+  font-weight: 400;
+  word-wrap: "break-word";
+  color: white;
+  position: absolute;
+  z-index: 2;
+}
+
+.right {
+  left: unset;
+  right: 0;
+}
+
+.prev-btn {
+  left: 5vw;
+  bottom: 5vw;
+  position: absolute;
+  width: 5vw;
+  z-index: 1000000;
+  transform: rotateX('90') translateX(0);
+  mix-blend-mode: color-dodge;
+  animation: fadeLeft forwards 3s infinite;
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(25%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-25%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(0);
+  }
 }
